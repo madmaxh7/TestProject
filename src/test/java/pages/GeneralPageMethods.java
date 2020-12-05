@@ -19,7 +19,7 @@ public class GeneralPageMethods {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-    public boolean checkElementExist(WebElement element){
+    public boolean checkElementExisting(WebElement element){
         return element.isDisplayed();
     }
 
