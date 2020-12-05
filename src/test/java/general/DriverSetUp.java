@@ -1,4 +1,4 @@
-
+package general;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -8,21 +8,17 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.concurrent.TimeUnit;
 
 public class DriverSetUp {
-
     protected WebDriver driver;
 
-    public static void main(String[] args) {
+    public WebDriver setUpDriver(){
         WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("http://github.com");
-        MainPage mainPage = PageFactory.initElements(driver, MainPage.class);
-
+        return driver;
     }
-    public void quitDriver() {
-        if (driver != null) {
+
+    public void quitDriver(){
+        if(driver != null){
             driver.close();
             driver.quit();
         }
