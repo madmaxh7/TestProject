@@ -15,7 +15,7 @@ public class GeneralPageMethods {
     }
 
     public void waitElementVisible(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(driver, 1);
+        WebDriverWait wait = new WebDriverWait(driver, 5);
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 

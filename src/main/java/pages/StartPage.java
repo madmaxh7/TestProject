@@ -24,7 +24,7 @@ public class StartPage extends GeneralPageMethods {
         waitElementVisible(mainheading);
     }
     public void clickAddComputer() {
-
+        driver.get(urlStartPage);
         clickElement(addnewcomputer);
     }
 }
