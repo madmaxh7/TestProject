@@ -1,4 +1,4 @@
-package pages;
+package tests.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -48,7 +48,7 @@ public class ComputersPage extends GeneralPageMethods {
     }
 
     public void fillField (){
-        pages.ComputersPage computersPage;
+        ComputersPage computersPage;
         computersPage = new ComputersPage(driver);
         computersPage.openPageComputes();
         System.out.println("web driver start 2");

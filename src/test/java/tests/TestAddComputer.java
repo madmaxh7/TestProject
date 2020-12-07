@@ -1,19 +1,20 @@
 package tests;
 
-import general.DriverSetUp;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import tests.general.DriverSetUp;
 import org.openqa.selenium.WebDriver;
-import pages.ComputersPage;
+import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+import tests.pages.ComputersPage;
+import tests.pages.StartPage;
 
 
 public class TestAddComputer extends DriverSetUp {
     WebDriver driver;
 
 
-    @Before
+    @BeforeTest
     public void startTest() {
         driver = setUpDriver();
 
@@ -27,18 +28,18 @@ public class TestAddComputer extends DriverSetUp {
     }
     @Test
     public void openAddComputerPage () {
-        pages.StartPage startPage = new pages.StartPage(driver);
+        StartPage startPage = new StartPage(driver);
         startPage.clickAddComputer();
     }
 
     @Test
     public void addComputer2base () {
-        pages.ComputersPage computersPage = new pages.ComputersPage(driver);
+        ComputersPage computersPage = new ComputersPage(driver);
         computersPage.fillField();
         Assert.assertTrue(computersPage.checkElementExisting(computersPage.alertDone));
     }
 
-    @After
+    @AfterTest
     public void closeDriver() {
         quitDriver();
    }
