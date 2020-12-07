@@ -18,7 +18,7 @@ public class MainPage extends DriverSetUp {
         driver = setUpDriver();
     }
 
-    @Test
+    @Test //check main page load, and internet connection is allow
     public void openTheHomePage() {
         StartPage startPage = new StartPage(driver);
         startPage.openPageComputes();
