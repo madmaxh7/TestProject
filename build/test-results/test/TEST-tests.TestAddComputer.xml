@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.TestAddComputer" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-12-08T22:05:16" hostname="DESKTOP-1DAEM50" time="2.917">
+  <properties/>
+  <testcase name="addComputer2base" classname="tests.TestAddComputer" time="1.25"/>
+  <testcase name="ceckAddfunction" classname="tests.TestAddComputer" time="0.565"/>
+  <testcase name="ceckSerchFiald" classname="tests.TestAddComputer" time="0.543"/>
+  <testcase name="openAddComputerPage" classname="tests.TestAddComputer" time="0.356"/>
+  <testcase name="openTheHomePage" classname="tests.TestAddComputer" time="0.196"/>
+  <system-out><![CDATA[2010-12-09
+Field Name:MadMax
+Field introduced:2010-12-09
+Field discontinued:2020-12-09
+Computer didn't add
+search work correct
+open page Add Computer Done
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
