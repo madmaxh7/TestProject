@@ -1,14 +1,13 @@
 package tests;
 
 import general.DriverSetUp;
-import pages.ComputersPage;
-import pages.StartPage;
-
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import pages.ComputersPage;
+import pages.StartPage;
 
 
 public class TestAddComputer extends DriverSetUp {
@@ -37,7 +36,25 @@ public class TestAddComputer extends DriverSetUp {
     public void addComputer2base () {
         ComputersPage computersPage = new ComputersPage(driver);
         computersPage.fillField();
-        Assert.assertTrue(computersPage.checkElementExisting(computersPage.alertDone));
+    }
+
+    @Test
+    public void ceckSerchFiald () {
+        StartPage startPage = new StartPage(driver);
+        startPage.openPageComputes();
+        startPage.fillSerchFeald();
+        startPage.clickSerchComputer();
+        Assert.assertTrue(startPage.checkElementExisting(startPage.acecomputer));
+        System.out.println("search work correct");
+    }
+    @Test
+    public void ceckAddfunction () {
+        StartPage startPage = new StartPage(driver);
+        startPage.openPageComputes();
+        startPage.fillSerchFealdAddetComp();
+        startPage.clickSerchComputer();
+        Assert.assertTrue(startPage.checkElementExisting(startPage.nothingFind));
+        System.out.println("Computer didn't add");
     }
 
     @AfterTest

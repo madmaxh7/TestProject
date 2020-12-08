@@ -34,41 +34,35 @@ public class ComputersPage extends GeneralPageMethods {
     @FindBy (xpath = "*//input[@class='btn primary']")
     public WebElement createComputer;
 
-    @FindBy (xpath = "*//div[@class='alert-message warning']/strong")
-    public WebElement alertDone;
+
+
+
+
+
 
 
     public void openPageComputes(){
         driver.get(urlAddComputer);
         waitElementVisible(mainheadingpage2);
-        System.out.println("web driver start 1");
-        System.out.println("alertDone"+alertDone);
-
-
+        System.out.println("open page Add Computer Done");
     }
 
     public void fillField (){
-        ComputersPage computersPage;
-        computersPage = new ComputersPage(driver);
-        computersPage.openPageComputes();
-        System.out.println("web driver start 2");
-        computerNameField.sendKeys("MadMax");
+        String name = "MadMax";
+        driver.get(urlAddComputer);
+        waitElementVisible(mainheadingpage2);
+        computerNameField.sendKeys(name);
         LocalDate today = LocalDate.now();
         LocalDate tenyearsago = today.minusYears(10);
         introducedField.sendKeys (""+tenyearsago);
         System.out.println(""+tenyearsago);
         discontinuedField.sendKeys(""+today);
-        System.out.println(""+today);
         companyList.click();
         waitElementVisible(companyTarget);
         companyTarget.click();
         createComputer.click();
-        System.out.println("alertDone"+alertDone);
+        System.out.println("Field Name:" +name);
+        System.out.println("Field introduced:" +tenyearsago);
+        System.out.println("Field discontinued:" +today);
     }
-
-
-
-
-
-
 }

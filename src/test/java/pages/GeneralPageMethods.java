@@ -27,4 +27,5 @@ public class GeneralPageMethods {
         waitElementVisible(element);
         element.click();
     }
+
 }

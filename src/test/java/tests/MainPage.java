@@ -2,6 +2,7 @@ package tests;
 
 import general.DriverSetUp;
 import pages.StartPage;
+import pages.ComputersPage;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -26,9 +27,12 @@ public class MainPage extends DriverSetUp {
         Assert.assertTrue(startPage.checkElementExisting(startPage.mainheading));
     }
     @Test
-    public void openAddComputerPage () {
+    public void AddComputerButton () {
        StartPage startPage = new StartPage(driver);
-       startPage.clickAddComputer();
+       Reporter.log("Check that button addComputer is visible");
+       startPage.openPageComputes();
+       startPage.checkAddComputerButton();
+       Assert.assertTrue(startPage.checkElementExisting(startPage.addnewcomputer));
     }
 
     @AfterTest
