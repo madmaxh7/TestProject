@@ -25,11 +25,14 @@ public class StartPage extends GeneralPageMethods {
     @FindBy (id="searchsubmit")
     public WebElement searchSubmit;
 
-    @FindBy (xpath = "//*[@id='main']/table/tbody/tr[1]/td[1]/a")
+    @FindBy (xpath = "//a[text()='ACE']")
     public WebElement acecomputer;
 
     @FindBy (xpath = "//em[text()='Nothing to display']")
     public WebElement nothingFind;
+
+    @FindBy (xpath = "//a[text()='MadMax']")
+    public WebElement computerName;
 
 
 

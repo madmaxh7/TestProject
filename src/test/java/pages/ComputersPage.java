@@ -13,6 +13,8 @@ public class ComputersPage extends GeneralPageMethods {
 
     String urlAddComputer = "http://computer-database.gatling.io/computers/new";
 
+    public String name = "MadMax";
+
     @FindBy(xpath  = "//a[contains(.,'Computer database')]")
     public WebElement mainheadingpage2;
 
@@ -48,7 +50,7 @@ public class ComputersPage extends GeneralPageMethods {
     }
 
     public void fillField (){
-        String name = "MadMax";
+
         driver.get(urlAddComputer);
         waitElementVisible(mainheadingpage2);
         computerNameField.sendKeys(name);

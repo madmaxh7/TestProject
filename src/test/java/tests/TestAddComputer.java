@@ -1,6 +1,7 @@
 package tests;
 
 import general.DriverSetUp;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
@@ -39,13 +40,22 @@ public class TestAddComputer extends DriverSetUp {
     }
 
     @Test
-    public void ceckSerchFiald () {
+    public boolean ceckSerchFiald () {
         StartPage startPage = new StartPage(driver);
         startPage.openPageComputes();
         startPage.fillSerchFeald();
         startPage.clickSerchComputer();
-        Assert.assertTrue(startPage.checkElementExisting(startPage.acecomputer));
-        System.out.println("search work correct");
+        try {
+            driver.findElement((By) startPage.acecomputer);
+            System.out.println("search work correct");
+            return true;
+        }
+        catch (org.openqa.selenium.NoSuchElementException e)
+        {
+            System.out.println("search not work correct");
+            return false;
+        }
+
     }
     @Test
     public void ceckAddfunction () {
@@ -53,8 +63,8 @@ public class TestAddComputer extends DriverSetUp {
         startPage.openPageComputes();
         startPage.fillSerchFealdAddetComp();
         startPage.clickSerchComputer();
-        Assert.assertTrue(startPage.checkElementExisting(startPage.nothingFind));
-        System.out.println("Computer didn't add");
+        Assert.assertTrue(startPage.checkElementExisting(startPage.computerName),"\"Checking existing of element\"");
+
     }
 
     @AfterTest
